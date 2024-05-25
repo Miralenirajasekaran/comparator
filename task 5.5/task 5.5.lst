@@ -1,0 +1,285 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.71a build 6446 
+                                                                                               Sat May 25 21:41:14 2024
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6446
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6446"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNROOT	_main
+    43                           	global	_RB0
+    44                           psect	maintext,global,class=CODE,delta=2
+    45                           global __pmaintext
+    46  07EA                     __pmaintext:
+    47  0030                     _RB0	set	48
+    48                           	global	_RB1
+    49  0031                     _RB1	set	49
+    50                           	global	_TRISB0
+    51  0430                     _TRISB0	set	1072
+    52                           	global	_TRISB1
+    53  0431                     _TRISB1	set	1073
+    54                           	file	"task 5.5.as"
+    55                           	line	#
+    56                           psect cinit,class=CODE,delta=2
+    57                           global start_initialization
+    58  07E6                     start_initialization:
+    59                           
+    60                           psect cinit,class=CODE,delta=2
+    61                           global end_of_initialization
+    62                           
+    63                           ;End of C runtime variable initialization code
+    64                           
+    65  07E6                     end_of_initialization:
+    66  07E6  0183               clrf status
+    67  07E7  120A  118A  2FEA   ljmp _main	;jump to C main() function
+    68                           psect	cstackCOMMON,class=COMMON,space=1
+    69                           global __pcstackCOMMON
+    70  0000                     __pcstackCOMMON:
+    71                           	global	?_main
+    72  0000                     ?_main:	; 0 bytes @ 0x0
+    73                           	global	??_main
+    74  0000                     ??_main:	; 0 bytes @ 0x0
+    75 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+    76 ;;Auto spaces:   Size  Autos    Used
+    77 ;; COMMON          14      0       0
+    78 ;; BANK0           80      0       0
+    79 ;; BANK1           80      0       0
+    80 ;; BANK3           96      0       0
+    81 ;; BANK2           96      0       0
+    82                           
+    83 ;;
+    84 ;; Pointer list with targets:
+    85                           
+    86                           
+    87                           
+    88 ;;
+    89 ;; Critical Paths under _main in COMMON
+    90 ;;
+    91 ;;   None.
+    92 ;;
+    93 ;; Critical Paths under _main in BANK0
+    94 ;;
+    95 ;;   None.
+    96 ;;
+    97 ;; Critical Paths under _main in BANK1
+    98 ;;
+    99 ;;   None.
+   100 ;;
+   101 ;; Critical Paths under _main in BANK3
+   102 ;;
+   103 ;;   None.
+   104 ;;
+   105 ;; Critical Paths under _main in BANK2
+   106 ;;
+   107 ;;   None.
+   108                           
+   109 ;;
+   110 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   111 ;;
+   112                           
+   113 ;;
+   114 ;;Call Graph Tables:
+   115 ;;
+   116 ;; ---------------------------------------------------------------------------------
+   117 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   118 ;; ---------------------------------------------------------------------------------
+   119 ;; (0) _main                                                 0     0      0       0
+   120 ;; ---------------------------------------------------------------------------------
+   121 ;; Estimated maximum stack depth 0
+   122 ;; ---------------------------------------------------------------------------------
+   123                           
+   124 ;; Call Graph Graphs:
+   125                           
+   126 ;; _main (ROOT)
+   127 ;;
+   128                           
+   129 ;; Address spaces:
+   130                           
+   131 ;;Name               Size   Autos  Total    Cost      Usage
+   132 ;;BITCOMMON            E      0       0       0        0.0%
+   133 ;;EEDATA             100      0       0       0        0.0%
+   134 ;;NULL                 0      0       0       0        0.0%
+   135 ;;CODE                 0      0       0       0        0.0%
+   136 ;;COMMON               E      0       0       1        0.0%
+   137 ;;BITSFR0              0      0       0       1        0.0%
+   138 ;;SFR0                 0      0       0       1        0.0%
+   139 ;;BITSFR1              0      0       0       2        0.0%
+   140 ;;SFR1                 0      0       0       2        0.0%
+   141 ;;STACK                0      0       0       2        0.0%
+   142 ;;ABS                  0      0       0       3        0.0%
+   143 ;;BITBANK0            50      0       0       4        0.0%
+   144 ;;BITSFR3              0      0       0       4        0.0%
+   145 ;;SFR3                 0      0       0       4        0.0%
+   146 ;;BANK0               50      0       0       5        0.0%
+   147 ;;BITSFR2              0      0       0       5        0.0%
+   148 ;;SFR2                 0      0       0       5        0.0%
+   149 ;;BITBANK1            50      0       0       6        0.0%
+   150 ;;BANK1               50      0       0       7        0.0%
+   151 ;;BITBANK3            60      0       0       8        0.0%
+   152 ;;BANK3               60      0       0       9        0.0%
+   153 ;;BITBANK2            60      0       0      10        0.0%
+   154 ;;BANK2               60      0       0      11        0.0%
+   155 ;;DATA                 0      0       0      12        0.0%
+   156                           
+   157                           	global	_main
+   158                           psect	maintext
+   159                           
+   160 ;; *************** function _main *****************
+   161 ;; Defined at:
+   162 ;;		line 7 in file "C:\Users\catch\Desktop\comparator\task 5.5\task 5.5.c"
+   163 ;; Parameters:    Size  Location     Type
+   164 ;;		None
+   165 ;; Auto vars:     Size  Location     Type
+   166 ;;		None
+   167 ;; Return value:  Size  Location     Type
+   168 ;;		None               void
+   169 ;; Registers used:
+   170 ;;		None
+   171 ;; Tracked objects:
+   172 ;;		On entry : 17F/0
+   173 ;;		On exit  : 0/0
+   174 ;;		Unchanged: 0/0
+   175 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   176 ;;      Params:         0       0       0       0       0
+   177 ;;      Locals:         0       0       0       0       0
+   178 ;;      Temps:          0       0       0       0       0
+   179 ;;      Totals:         0       0       0       0       0
+   180 ;;Total ram usage:        0 bytes
+   181 ;; This function calls:
+   182 ;;		Nothing
+   183 ;; This function is called by:
+   184 ;;		Startup code after reset
+   185 ;; This function uses a non-reentrant model
+   186 ;;
+   187                           psect	maintext
+   188                           	file	"C:\Users\catch\Desktop\comparator\task 5.5\task 5.5.c"
+   189                           	line	7
+   190                           	global	__size_of_main
+   191  0016                     	__size_of_main	equ	__end_of_main-_main
+   192                           	
+   193  07EA                     _main:	
+   194                           	opt	stack 8
+   195                           ; Regs used in _main: []
+   196                           	line	9
+   197                           	
+   198  07EA                     l933:	
+   199                           ;task 5.5.c: 9: TRISB0 = 0;
+   200  07EA  1683               	bsf	status, 5	;RP0=1, select bank1
+   201  07EB  1303               	bcf	status, 6	;RP1=0, select bank1
+   202  07EC  1006               	bcf	(1072/8)^080h,(1072)&7
+   203                           	line	10
+   204                           ;task 5.5.c: 10: RB0 = 0;
+   205  07ED  1283               	bcf	status, 5	;RP0=0, select bank0
+   206  07EE  1303               	bcf	status, 6	;RP1=0, select bank0
+   207  07EF  1006               	bcf	(48/8),(48)&7
+   208                           	line	13
+   209                           ;task 5.5.c: 13: TRISB1 = 1;
+   210  07F0  1683               	bsf	status, 5	;RP0=1, select bank1
+   211  07F1  1303               	bcf	status, 6	;RP1=0, select bank1
+   212  07F2  1486               	bsf	(1073/8)^080h,(1073)&7
+   213                           	line	15
+   214                           ;task 5.5.c: 15: while (1) {
+   215                           	
+   216  07F3                     l559:	
+   217                           	line	17
+   218                           ;task 5.5.c: 17: if (RB1) {
+   219  07F3  1283               	bcf	status, 5	;RP0=0, select bank0
+   220  07F4  1303               	bcf	status, 6	;RP1=0, select bank0
+   221  07F5  1C86               	btfss	(49/8),(49)&7
+   222  07F6  2FF8               	goto	u11
+   223  07F7  2FF9               	goto	u10
+   224  07F8                     u11:
+   225  07F8  2FFB               	goto	l560
+   226  07F9                     u10:
+   227                           	line	18
+   228                           	
+   229  07F9                     l935:	
+   230                           ;task 5.5.c: 18: RB0 = 1;
+   231  07F9  1406               	bsf	(48/8),(48)&7
+   232                           	line	19
+   233                           ;task 5.5.c: 19: } else {
+   234  07FA  2FFC               	goto	l561
+   235                           	
+   236  07FB                     l560:	
+   237                           	line	20
+   238                           ;task 5.5.c: 20: RB0 = 0;
+   239  07FB  1006               	bcf	(48/8),(48)&7
+   240                           	line	21
+   241                           	
+   242  07FC                     l561:	
+   243                           	line	22
+   244                           	
+   245  07FC                     l562:	
+   246                           	line	15
+   247  07FC  2FF3               	goto	l559
+   248                           	
+   249  07FD                     l563:	
+   250                           	line	23
+   251                           	
+   252  07FD                     l564:	
+   253                           	global	start
+   254  07FD  120A  118A  2800   	ljmp	start
+   255                           	opt stack 0
+   256                           GLOBAL	__end_of_main
+   257  0800                     	__end_of_main:
+   258 ;; =============== function _main ends ============
+   259                           
+   260                           	signat	_main,88
+   261                           psect	maintext
+   262                           	global	btemp
+   263  007E                     	btemp set 07Eh
+   264                           
+   265                           	DABS	1,126,2	;btemp
+   266                           	global	wtemp0
+   267  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.71a build 6446 
+Symbol Table                                                                                   Sat May 25 21:41:14 2024
+
+                  u10 07F9                    u11 07F8                   l560 07FB                   l561 07FC  
+                 l562 07FC                   l563 07FD                   l564 07FD                   l559 07F3  
+                 l933 07EA                   l935 07F9                   _RB0 0030                   _RB1 0031  
+                _main 07EA                  btemp 007E                  start 0000                 ?_main 0000  
+               status 0003                 wtemp0 007E          __end_of_main 0800                ??_main 0000  
+              _TRISB0 0430                _TRISB1 0431        __pcstackCOMMON 0000            __pmaintext 07EA  
+end_of_initialization 07E6   start_initialization 07E6         __size_of_main 0016  
